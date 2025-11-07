@@ -184,7 +184,7 @@ print("Starting dataset preparation")
 def prepare_dataset():
 
     print("Importing website links")
-    df_product = pd.read_csv('/Users/gustavobrunelli/Documents/AI Engineering/personal_automation/website_links.csv')
+    df_product = pd.read_csv('website_links.csv')
     print("website links imported")
 
     print("Starting data extraction")
@@ -223,9 +223,9 @@ def save_to_database(df_product: pd.DataFrame):
     print("Saving data to database_price.csv")
 
     #open the database_price csv file and append the data from df_product to it
-    df_database = pd.read_csv('/Users/gustavobrunelli/Documents/AI Engineering/personal_automation/database_price.csv')
+    df_database = pd.read_csv('database_price.csv')
     df_database = pd.concat([df_database, df_product], ignore_index=True)
-    df_database.to_csv('/Users/gustavobrunelli/Documents/AI Engineering/personal_automation/database_price.csv', index=False)
+    df_database.to_csv('database_price.csv', index=False)
 
     print("Data saved to database_price.csv")
 
